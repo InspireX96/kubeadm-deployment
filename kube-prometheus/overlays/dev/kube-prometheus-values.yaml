@@ -82,7 +82,7 @@ alertmanager:
   ## Configuration for creating a separate Service for each statefulset Alertmanager replica
   ##
   servicePerReplica:
-    enabled: true
+    enabled: false
     annotations: {}
 
     ## Port for Alertmanager Service per replica to listen on
