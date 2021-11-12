@@ -3,6 +3,8 @@ Deploy on kubeadm cluster
 
 ## Argo CD
 
+Continuous delivery tool for k8s
+
 ### Installation
 
 Argo CD needs to be installed first, then it will help to manage deployments in this repo
@@ -28,3 +30,11 @@ make kustomize
 ```
 
 ArgoCD can self-manage from now on
+
+## Kube-prometheus stack
+
+Managed by Argo CD, for monitoring purpose
+
+### Grafana
+
+The default username and password is `admin/prom-operator`
