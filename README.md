@@ -38,3 +38,5 @@ Managed by Argo CD, for monitoring purpose
 ### Grafana
 
 The default username and password is `admin/prom-operator`
+
+Useful dashboards: 315, 3244
