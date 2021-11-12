@@ -8,11 +8,12 @@ metadata:
 spec:
   project: dev
   source:
-    path: argocd/overlays/dev
     repoURL: https://github.com/InspireX96/kubeadm-deployment
+    path: argocd/overlays/dev
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
+    namespace: argocd
   syncPolicy:
     automated:
       selfHeal: true
