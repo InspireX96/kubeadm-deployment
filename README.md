@@ -16,8 +16,15 @@ make install
 
 
 # expose Argo CD by NodePort and get login password
-kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort", "ports": [{"port":80, "nodePort": 30864}]}}'
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
-Initialize project and environments so ArgoCD can self-manage from now on
+Initialize project and environments
+
+```
+cd environments
+make kustomize 
+```
+
+ArgoCD can self-manage from now on
