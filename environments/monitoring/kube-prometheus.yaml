@@ -10,8 +10,6 @@ spec:
     path: kube-prometheus/overlays/dev
     targetRevision: HEAD
     helm:
-      chart:
-        - 
       valueFiles:
         - kube-prometheus-values.yaml
   destination:
