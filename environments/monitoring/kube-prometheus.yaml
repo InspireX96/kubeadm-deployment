@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kube-prometheus
-  namespace: monitoring
+  namespace: argocd
 spec:
-  project: monitoring
+  project: dev
   source:
     repoURL: https://github.com/InspireX96/kubeadm-deployment
     path: kube-prometheus/overlays/dev
@@ -15,7 +15,7 @@ spec:
       releaseName: kube-prometheus
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
