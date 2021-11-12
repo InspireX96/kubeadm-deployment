@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus
+  namespace: monitoring
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/InspireX96/kubeadm-deployment
+    path: kube-prometheus/overlays/dev
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - kube-prometheus-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
