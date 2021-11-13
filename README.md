@@ -11,7 +11,7 @@ Argo CD needs to be installed first, then it will help to manage deployments in 
 
 [https://argo-cd.readthedocs.io/en/stable/getting_started/](https://argo-cd.readthedocs.io/en/stable/getting_started/)
 
-```
+```bash
 # install Argo CD
 cd argocd/base/kustomize
 make install
@@ -24,12 +24,23 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 Initialize project and environments
 
-```
+```bash
 cd environments
 make kustomize 
 ```
 
-ArgoCD can self-manage from now on
+Argo CD can self-manage from now on
+
+### Add environment
+
+To add a new environment, add a project in `environments/project.yaml` and add an app in `environments/apps.yaml`. Create a subdirectory under `environments/` and add the application yaml files. Then commit and push to master branch
+
+```bash
+cd argocd/base/kustomize
+make instal
+```
+
+New project will be synced by Argo CD
 
 ## Kube-prometheus stack
 
