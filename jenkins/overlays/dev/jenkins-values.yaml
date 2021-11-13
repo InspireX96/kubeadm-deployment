@@ -11,7 +11,7 @@ controller:
   # Used for label app.kubernetes.io/component
   componentName: "jenkins-controller"
   image: "jenkins/jenkins"
-  tag: "2.289.3-jdk11"
+  tag: "2.303.3-jdk11"
   imagePullPolicy: "Always"
   disableRememberMe: false
   numExecutors: 0
@@ -22,10 +22,10 @@ controller:
 
   resources:
     requests:
-      cpu: "50m"
-      memory: "256Mi"
+      cpu: "1000m"
+      memory: "2048Mi"
     limits:
-      cpu: "2000m"
+      cpu: "3000m"
       memory: "4096Mi"
 
   # Enable pod security context (must be `true` if podSecurityContextOverride, runAsUser or fsGroup are set)
@@ -48,12 +48,14 @@ controller:
 
   # List of plugins to be install during Jenkins controller start
   installPlugins:
-    - sshd:3.0.4
     - docker-commons:1.15
-    - kubernetes:1.29.4
+    - kubernetes:1.30.1
     - workflow-aggregator:2.6
-    - git:4.7.1
-    - configuration-as-code:1.51
+    - git:4.9.0
+    - configuration-as-code:1.53
+    - pipeline-model-definition:1.9.2  # required by docker-workflow
+    - pipeline-model-extensions:1.9.2  # required by kubernetes
+    - workflow-cps:2.94  # required by kubernetes
   
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
