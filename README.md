@@ -13,7 +13,7 @@ Argo CD needs to be installed first, then it will help to manage deployments in 
 
 ```
 # install Argo CD
-cd argocd/overlays/dev
+cd argocd/base/kustomize
 make install
 
 
