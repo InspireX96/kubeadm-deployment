@@ -6,5 +6,5 @@ namespace: argocd
 bases:
   - ../../base/kustomize
 
-resources:
+patches:
   - guestbook-ui-svc.yaml
