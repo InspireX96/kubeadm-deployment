@@ -15,8 +15,10 @@ spec:
       releaseName: kube-prometheus
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: monitoring
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
