@@ -23,10 +23,10 @@ controller:
   resources:
     requests:
       cpu: "1000m"
-      memory: "4096Mi"
+      memory: "7Gi"
     limits:
       cpu: "3000m"
-      memory: "8192Mi"
+      memory: "8Gi"
 
   # Enable pod security context (must be `true` if podSecurityContextOverride, runAsUser or fsGroup are set)
   usePodSecurityContext: true
