@@ -9,9 +9,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - nodePort: 32443
+  - nodePort: 31000
     port: 443
-    protocol: TCP
     targetPort: 8443
   selector:
     k8s-app: kubernetes-dashboard
