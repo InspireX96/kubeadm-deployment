@@ -1,0 +1,65 @@
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: controlling
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: controlling
+  source:
+    repoURL: https://github.com/InspireX96/kubeadm-deployment
+    targetRevision: HEAD
+    path: environments/dev/controlling
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: monitoring
+  source:
+    repoURL: https://github.com/InspireX96/kubeadm-deployment
+    targetRevision: HEAD
+    path: environments/dev/monitoring
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: monitoring
+  source:
+    repoURL: https://github.com/InspireX96/kubeadm-deployment
+    targetRevision: HEAD
+    path: environments/dev/apps
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
