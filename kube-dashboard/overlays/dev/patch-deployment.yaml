@@ -9,7 +9,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - nodePort: 31000
+  - nodePort: 31443
     port: 443
     targetPort: 8443
   selector:
