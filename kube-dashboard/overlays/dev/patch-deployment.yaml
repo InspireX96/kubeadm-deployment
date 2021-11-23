@@ -9,7 +9,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - nodePort: 32708
+  - nodePort: 32443
     port: 443
     protocol: TCP
     targetPort: 8443
