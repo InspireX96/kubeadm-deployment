@@ -36,8 +36,8 @@ Argo CD can self-manage from now on
 To add a new environment, add a project in `environments/project.yaml` and add an app in `environments/apps.yaml`. Create a subdirectory under `environments/` and add the application yaml files. Then commit and push to master branch
 
 ```bash
-cd argocd/base/kustomize
-make instal
+cd argocd/overlays/dev
+make install
 ```
 
 New project will be synced by Argo CD
