@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: kubernetes-dashboard
 
 resources:
-  - deployment.yaml
+  - kube-dashboard-deployment.yaml
