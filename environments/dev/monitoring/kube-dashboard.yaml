@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-dashboard
+  namespace: argocd
+spec:
+  project: monitoring
+  source:
+    repoURL: https://github.com/InspireX96/kubeadm-deployment
+    path: kube-dashboard/base/helm
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - kube-dashboard-values.yaml
+      releaseName: kube-dashboard
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
