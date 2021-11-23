@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 
+metadata:
+  name: kubernetes-dashboard
 spec:
   ports:
   - nodePort: 32008
