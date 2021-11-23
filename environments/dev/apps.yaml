@@ -52,7 +52,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: monitoring
+  project: dev
   source:
     repoURL: https://github.com/InspireX96/kubeadm-deployment
     targetRevision: HEAD
