@@ -5,7 +5,6 @@ namespace: kubernetes-dashboard
 
 bases:
   - ../../base/kustomize
-resources:
-  - kube-dashboard-sa.yaml
 patchesStrategicMerge:
   - patch-deployment.yaml
+  - kube-dashboard-sa.yaml
