@@ -3,16 +3,14 @@ kind: Application
 metadata:
   name: kube-dashboard
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: monitoring
   source:
     repoURL: https://github.com/InspireX96/kubeadm-deployment
-    path: kube-dashboard/base/helm
+    path: kube-dashboard/overlays/dev
     targetRevision: HEAD
-    helm:
-      valueFiles:
-        - kube-dashboard-values.yaml
-      releaseName: kube-dashboard
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring

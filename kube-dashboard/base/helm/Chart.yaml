@@ -1,8 +1,0 @@
-# https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/helm-chart/kubernetes-dashboard/Chart.yaml
-apiVersion: v2
-name: kube-dashboard
-version: 0.1.0
-dependencies:
-- name: kube-dashboard
-  version: 5.0.4
-  repository: https://github.com/kubernetes/dashboard
