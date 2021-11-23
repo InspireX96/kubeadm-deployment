@@ -50,6 +50,16 @@ Managed by Argo CD, for monitoring purpose
 
 The default username and password is `admin/prom-operator`
 
+## Kubernetes Dashboard
+
+Managed by ArgoCD, general purpose kubernetes dashboard
+
+Get login token
+
+```
+kubectl get secret -n kubernetes-dashboard $(kubectl get serviceaccount cluster-admin-dashboard-sa -n kubernetes-dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+```
+
 ## Jenkins
 
 Deploy the legendary automation server in k8s using helm
