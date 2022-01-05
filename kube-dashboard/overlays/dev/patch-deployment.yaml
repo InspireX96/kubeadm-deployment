@@ -10,9 +10,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - nodePort: 31443
-    port: 443
-    targetPort: 8443
+    - nodePort: 31443
+      port: 443
+      targetPort: 8443
   selector:
     k8s-app: kubernetes-dashboard
 ---
@@ -27,6 +27,6 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- kind: ServiceAccount
-  name: cluster-admin-dashboard-sa
-  namespace: kube-system
+  - kind: ServiceAccount
+    name: cluster-admin-dashboard-sa
+    namespace: kube-system
