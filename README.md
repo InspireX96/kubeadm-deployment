@@ -113,3 +113,9 @@ https://jenkins.io/projects/jcasc/
 
 NOTE: Consider using a custom image with pre-installed plugins
 ```
+
+## CI testing
+
+Github actions are used for CI testing against pull requests to the master branch
+
+Ref: [https://yamllint.readthedocs.io/en/stable/index.html](https://yamllint.readthedocs.io/en/stable/index.html)
